@@ -1,59 +1,73 @@
 {
-  "PerformingOrg": {
-    "Code": "TKD13",
-    "DisplayName": "Midtown District Hospital",
-    "AddressLine": "Beckett Street",
-    "AddressCity": "Leeds",
-    "AddressDistrict": "West YorkShire",
-    "AddressPostalCode": "LS9 7TF"
+  "Person": {
+    "FirstName": "Jane",
+    "FamilyName": "Doe",
+    "Title": "Ms",
+    "PersonFullName": "Ms Jane Doe",
+    "DOB": "1/1/1960",
+    "Gender": "Female",
+    "NHS number": "123456789",
+    "Other identifier": "HN98765"
+    "AddressLine1": "46",
+    "AddressLine2": "Birch Close",
+    "Postcode": "AG2 6SL",
+    "TelephoneNumber": "0777777777"
   },
-  "RequestingHCP": {
-    "Code": "G6040649",
-    "DisplayName": "Dr Jane Green"
+  "GP Practice": {
+    "GP name": "Dr Joe Collins",
+    "GP practice details": "U Health Centre, 12 High Road, AG1 2RD",
+    "GP practice indentifier": "ASDF7789"
   },
-  "RequestingOrg": {
-    "Code": "D82015",
-    "DisplayName": "Manor GP Practice",
-    "AddressLine": "30/32 Bridge Street",
-    "AddressCity": "Downham Market",
-    "AddressDistrict": "Norfolk",
-    "AddressPostalCode": "PE38 9DH"
+  "About me": {
+    "About me": " I am 78 and I live with my husband. I enjoy looking after my grandchildren. I would like to do more with them but get pains from arthritis. I also have diabetes and COPD.",
+    "Date": "17/10/17",
+    "Supported to write this by": "Myself (Ms Jane Doe), Dr Joe Collins (GP) joe.Collins9@nhs.net"
+  }, 
+  "Care and Support Plan": {
+    "Needs,Concerns,Problems": "Would like to lose weight",
+    "Goals and hopes": "To fit into size 16 dress by Christmas. Importance: 10/10",
+    "Stage goal": "To walk to the end of the garden",
+    "What": "Increase walking. Cut out daily biscuits with morning and afternoon coffee. Change sugar to sweeteners in hot drinks",
+    "Who": "Myself",
+    "When": "Between now and Christmas",
+    "Suggested Strategies": "Slowly increase walkking distance each week",
+    "Status": "Completed",
+    "Confidence": "7/10",
+    "Outcome": "Fully achieved"
+    "Date last updated": "17/11/17
+    "Review date": "6 months",
+    "Agreed with person or legitimate representative": "Yes",
+    "Date this plan was last updated": "17/11/17",
+    "Planned review date/interval": "In 6 months",
   },
-  "Request": {
-    "Code": "26604007",
-    "DisplayName": "FBC - Full blood count",
-    "text": "FBC"
+  "Responsbility for review": {
+    "Name": "Dr Joe Collins",
+    "Role": "GP",
+    "ContactPhone": "0203456789",
+    "ContactEmail": "joe.Collins9@nhs.net"
+    "Organisation": "Surgery",
   },
-  "CollectingHCP": {
-    "Code": "J7040649",
-    "DisplayName": "Alice Jones"
+  "PerformingProfessional": {
+    "Name": "Tom Robbins".
+    "Role": "Physiotherapist",
+    "Org": "NHS Trust",
+    "ContactPhone": "0203456789",
+    "ContactEmail": "t.robbins@nhs.net"
+  
   },
-  "CollectingOrganization": {
-    "Code": "D82015",
-    "DisplayName": "Manor GP Practice",
-    "AddressLine": "30/32 Bridge Street",
-    "AddressCity": "Downham Market",
-    "AddressDistrict": "Norfolk",
-    "AddressPostalCode": "PE38 9DH"
+  "Person Completing Record": {
+    "Name": "Dr Joe Collins",
+    "Role": "GP",
+    "Organisation": "Surgery",
+    "ContactPhone": "0203456789",
+    "ContactEmail": "joe.Collins9@nhs.net"
   },
-  "Specimen": {
-    "Code": "53130003",
-    "DisplayName": "Venous blood (substance)"
+  "Contigency Plan": {
+    "Name": "COPD contigency plan",
+    "Date this plan was last updated": "17/10/17",
+    "Planned review date/interval": "19/04/17",
+    "Trigger Factors": "Chest infection/exarcerbation COPD",
+    "What should happen": "Follow advice on COPD action plan. Start rescue pack if indicated",
+    "Who should be contacted": "Urgent Care Team 01915555555, or Glenpark Surgery on 019122222222",
   },
-  "PerformingHCP": {
-    "Code": "J7040649",
-    "DisplayName": "Alice Jones"
-  },
-  "Observation": {
-    "code": "1000381000000105",
-    "DisplayName": "Se prostate specific Ag level",
-    "value": 72,
-    "unit": "ug/L",
-    "unit_code": "ug/L",
-    "system": "http://unitsofmeasure.org"
-  },
-  "DiagnosticReport": {
-    "Code": "1028441000000104",
-    "DisplayName": "Potassium Level (Observable entity)"
-  }
 }
