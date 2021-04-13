@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_057jlty" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.4.0">
+  <bpmn:process id="GP_report_check" name="&#10;&#10;&#10;&#10;" isExecutable="true">
+    <bpmn:startEvent id="Start" name="Start">
+      <bpmn:outgoing>Flow_09letf4</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="patient_assessment" name="1.Concern about patient health">
+      <bpmn:incoming>Flow_09letf4</bpmn:incoming>
+      <bpmn:outgoing>Flow_13bdz3v</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="test_request" name="2. Appointment with GP/NHS">
+      <bpmn:incoming>Flow_13bdz3v</bpmn:incoming>
+      <bpmn:outgoing>Flow_02uxybo</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Specimen_check" name="3. Patient assessed by psychiatrist">
+      <bpmn:incoming>Flow_1nau8n7</bpmn:incoming>
+      <bpmn:incoming>Flow_02uxybo</bpmn:incoming>
+      <bpmn:outgoing>Flow_0hujkzo</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="lab_test" name="4. Patient identifies needs/concerns">
+      <bpmn:incoming>Flow_0hujkzo</bpmn:incoming>
+      <bpmn:outgoing>Flow_0fe8j78</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="receive_report" name="7. Goals set out by patient">
+      <bpmn:incoming>Flow_0fe8j78</bpmn:incoming>
+      <bpmn:outgoing>Flow_01zbiwb</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="inform_patient" name="8. Actions defined that will achieve goals">
+      <bpmn:incoming>Flow_0sb6esa</bpmn:incoming>
+      <bpmn:outgoing>Flow_1x0z6tu</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="Finish" name="Finish">
+      <bpmn:incoming>Flow_1mwum4f</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0fe8j78" sourceRef="lab_test" targetRef="receive_report" />
+    <bpmn:sequenceFlow id="Flow_09letf4" sourceRef="Start" targetRef="patient_assessment" />
+    <bpmn:intermediateCatchEvent id="sending_test_request" name="GP referral to psychiartrist">
+      <bpmn:outgoing>Flow_1nau8n7</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_1sjl4yv">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">{'quantity':randint(12,48),'unit':'hours'}</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:intermediateCatchEvent id="GP_diagnosis" name="Wait to see GP">
+      <bpmn:timerEventDefinition id="TimerEventDefinition_0puuive">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">{'quantity':randint(5,10),'unit':'minutes'}</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:intermediateCatchEvent id="specimen_ready_for_test">
+      <bpmn:timerEventDefinition id="TimerEventDefinition_0stta8x">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">{'quantity':randint(1,30),'unit':'minutes'}</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="Flow_0hujkzo" sourceRef="Specimen_check" targetRef="lab_test" />
+    <bpmn:sequenceFlow id="Flow_0sb6esa" sourceRef="GP_checks_report" targetRef="inform_patient" />
+    <bpmn:sequenceFlow id="Flow_1x0z6tu" sourceRef="inform_patient" targetRef="Activity_1kh712a" />
+    <bpmn:sequenceFlow id="Flow_13bdz3v" sourceRef="patient_assessment" targetRef="test_request" />
+    <bpmn:intermediateCatchEvent id="GP_checks_report">
+      <bpmn:incoming>Flow_01zbiwb</bpmn:incoming>
+      <bpmn:outgoing>Flow_0sb6esa</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_175p0t9">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">{'quantity':randint(1,24),'unit':'hours'}</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="Flow_01zbiwb" sourceRef="receive_report" targetRef="GP_checks_report" />
+    <bpmn:sequenceFlow id="Flow_1nau8n7" sourceRef="sending_test_request" targetRef="Specimen_check" />
+    <bpmn:sequenceFlow id="Flow_02uxybo" sourceRef="test_request" targetRef="Specimen_check" />
+    <bpmn:task id="Activity_1kh712a" name="9. Outcome of goals determined">
+      <bpmn:incoming>Flow_1x0z6tu</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ki2je9</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1ki2je9" sourceRef="Activity_1kh712a" targetRef="Activity_0vtyqts" />
+    <bpmn:task id="Activity_0vtyqts" name="9. Outcome of goals determined">
+      <bpmn:incoming>Flow_1ki2je9</bpmn:incoming>
+      <bpmn:outgoing>Flow_1mwum4f</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1mwum4f" sourceRef="Activity_0vtyqts" targetRef="Finish" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="GP_report_check">
+      <bpmndi:BPMNEdge id="Flow_01zbiwb_di" bpmnElement="Flow_01zbiwb">
+        <di:waypoint x="1100" y="230" />
+        <di:waypoint x="1152" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13bdz3v_di" bpmnElement="Flow_13bdz3v">
+        <di:waypoint x="280" y="230" />
+        <di:waypoint x="370" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1x0z6tu_di" bpmnElement="Flow_1x0z6tu">
+        <di:waypoint x="1330" y="230" />
+        <di:waypoint x="1420" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0sb6esa_di" bpmnElement="Flow_0sb6esa">
+        <di:waypoint x="1188" y="230" />
+        <di:waypoint x="1230" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0hujkzo_di" bpmnElement="Flow_0hujkzo">
+        <di:waypoint x="670" y="230" />
+        <di:waypoint x="800" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_09letf4_di" bpmnElement="Flow_09letf4">
+        <di:waypoint x="230" y="88" />
+        <di:waypoint x="230" y="190" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0fe8j78_di" bpmnElement="Flow_0fe8j78">
+        <di:waypoint x="900" y="230" />
+        <di:waypoint x="1000" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1nau8n7_di" bpmnElement="Flow_1nau8n7">
+        <di:waypoint x="538" y="230" />
+        <di:waypoint x="570" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_02uxybo_di" bpmnElement="Flow_02uxybo">
+        <di:waypoint x="470" y="230" />
+        <di:waypoint x="570" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ki2je9_di" bpmnElement="Flow_1ki2je9">
+        <di:waypoint x="1520" y="230" />
+        <di:waypoint x="1630" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1mwum4f_di" bpmnElement="Flow_1mwum4f">
+        <di:waypoint x="1680" y="190" />
+        <di:waypoint x="1680" y="118" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_057ir1f_di" bpmnElement="Start">
+        <dc:Bounds x="212" y="52" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="217" y="63" width="25" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1k3kad9_di" bpmnElement="patient_assessment">
+        <dc:Bounds x="180" y="190" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1nm9a2m_di" bpmnElement="test_request">
+        <dc:Bounds x="370" y="190" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0xjfra5_di" bpmnElement="GP_diagnosis">
+        <dc:Bounds x="302" y="212" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="284" y="255" width="74" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1bet2f9_di" bpmnElement="Specimen_check">
+        <dc:Bounds x="570" y="190" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_07ipsxb_di" bpmnElement="sending_test_request">
+        <dc:Bounds x="502" y="212" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="486" y="255" width="67" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_04cn5yk_di" bpmnElement="specimen_ready_for_test">
+        <dc:Bounds x="722" y="212" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="696" y="174.5" width="87" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0rxllnd_di" bpmnElement="lab_test">
+        <dc:Bounds x="800" y="190" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_11izt08_di" bpmnElement="receive_report">
+        <dc:Bounds x="1000" y="190" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1q79kcm_di" bpmnElement="GP_checks_report">
+        <dc:Bounds x="1152" y="212" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1298" y="255" width="90" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0nc5u7v_di" bpmnElement="inform_patient">
+        <dc:Bounds x="1230" y="190" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1kh712a_di" bpmnElement="Activity_1kh712a">
+        <dc:Bounds x="1420" y="190" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0vtyqts_di" bpmnElement="Activity_0vtyqts">
+        <dc:Bounds x="1630" y="190" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0ns5a8k_di" bpmnElement="Finish">
+        <dc:Bounds x="1662" y="82" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1665" y="58" width="30" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
