@@ -33,8 +33,8 @@
     "Suggested Strategies": "Slowly increase walkking distance each week",
     "Status": "Completed",
     "Confidence": "7/10",
-    "Outcome": "Fully achieved"
-    "Date last updated": "17/11/17"
+    "Outcome": "Fully achieved",
+    "Date last updated": "17/11/17",
     "Review date": "6 months",
     "Agreed with person or legitimate representative": "Yes",
     "Date this plan was last updated": "17/11/17",
@@ -44,7 +44,7 @@
     "Name": "Dr Joe Collins",
     "Role": "GP",
     "ContactPhone": "0203456789",
-    "ContactEmail": "joe.Collins9@nhs.net"
+    "ContactEmail": "joe.Collins9@nhs.net",
     "Organisation": "Surgery"
   },
   "PerformingProfessional": {
