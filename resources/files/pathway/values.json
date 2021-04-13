@@ -7,7 +7,7 @@
     "DOB": "1/1/1960",
     "Gender": "Female",
     "NHS number": "123456789",
-    "Other identifier": "HN98765"
+    "Other identifier": "HN98765",
     "AddressLine1": "46",
     "AddressLine2": "Birch Close",
     "Postcode": "AG2 6SL",
@@ -38,22 +38,21 @@
     "Review date": "6 months",
     "Agreed with person or legitimate representative": "Yes",
     "Date this plan was last updated": "17/11/17",
-    "Planned review date/interval": "In 6 months",
+    "Planned review date/interval": "In 6 months"
   },
   "Responsbility for review": {
     "Name": "Dr Joe Collins",
     "Role": "GP",
     "ContactPhone": "0203456789",
     "ContactEmail": "joe.Collins9@nhs.net"
-    "Organisation": "Surgery",
+    "Organisation": "Surgery"
   },
   "PerformingProfessional": {
-    "Name": "Tom Robbins".
+    "Name": "Tom Robbins",
     "Role": "Physiotherapist",
     "Org": "NHS Trust",
     "ContactPhone": "0203456789",
     "ContactEmail": "t.robbins@nhs.net"
-  
   },
   "Person Completing Record": {
     "Name": "Dr Joe Collins",
@@ -68,6 +67,6 @@
     "Planned review date/interval": "19/04/17",
     "Trigger Factors": "Chest infection/exarcerbation COPD",
     "What should happen": "Follow advice on COPD action plan. Start rescue pack if indicated",
-    "Who should be contacted": "Urgent Care Team 01915555555, or Glenpark Surgery on 019122222222",
+    "Who should be contacted": "Urgent Care Team 01915555555, or Glenpark Surgery on 019122222222"
   },
 }
