@@ -3,7 +3,7 @@
     "FirstName": "Jane",
     "FamilyName": "Doe",
     "Title": "Ms",
-    "PersonFullName": "Ms Jane Doe",
+    "FullName": "Ms Jane Doe",
     "DOB": "1/1/1960",
     "Gender": "Female",
     "NHS number": "123456789",
