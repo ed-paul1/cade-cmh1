@@ -1,72 +1,118 @@
 {
-  "Person": {
-    "FirstName": "Jane",
-    "FamilyName": "Doe",
-    "Title": "Ms",
-    "FullName": "Ms Jane Doe",
-    "DOB": "1/1/1960",
-    "Gender": "Female",
-    "NHS number": "123456789",
-    "Other identifier": "HN98765",
-    "AddressLine1": "46",
-    "AddressLine2": "Birch Close",
-    "Postcode": "AG2 6SL",
-    "TelephoneNumber": "0777777777"
+  "PersonDemographics": {
+      "PersonName": {
+        "PersonFirstName": "Jane",
+        "PersonFamilyName": "Doe",
+        "Title": "Ms",
+        "PersonFullName": "Ms Jane Doe",
+      },
+      "DateOfBirth": "1/1/1960",
+      "Gender": "Female",
+      "NHSnumber": "123456789",
+      "Other identifier": "HN98765"
+    },
+     "PersonAddress":{
+       "AddressLine1": "46",
+       "AddressLine2": "Birch Close",
+       "Postcode": "AG2 6SL"
+    },
+     "PersonContactDetails":{
+       "PersonTelephoneNumber": "0777777777"
+    },
   },
-  "GP Practice": {
-    "GP name": "Dr Joe Collins",
-    "GP practice details": "U Health Centre, 12 High Road, AG1 2RD",
-    "GP practice indentifier": "ASDF7789"
+  "GPpractice": {
+    "GPpracticeRecordEntry":{
+      "GPname": "Dr Joe Collins",
+      "GPpracticeDetails": "U Health Centre, 12 High Road, AG1 2RD",
+      "GPpracticeIndentifier": "ASDF7789"
+     },
+   },
+  "AboutMe": {
+    "AboutMe": "I am 78 and I live with my husband. I enjoy looking after my grandchildren. I would like to do more with them but get pains from arthritis. I also have diabetes and COPD",{
+      "Date": "17/10/17",
+      "SupportedToWriteThisBy": "Myself (Ms Jane Doe), Dr Joe Collins (GP) joe.Collins9@nhs.net"
+    },
   },
-  "About me": {
-    "About me": " I am 78 and I live with my husband. I enjoy looking after my grandchildren. I would like to do more with them but get pains from arthritis. I also have diabetes and COPD.",
-    "Date": "17/10/17",
-    "Supported to write this by": "Myself (Ms Jane Doe), Dr Joe Collins (GP) joe.Collins9@nhs.net"
-  }, 
-  "Care and Support Plan": {
-    "Needs,Concerns,Problems": "Would like to lose weight",
-    "Goals and hopes": "To fit into size 16 dress by Christmas. Importance: 10/10",
-    "Stage goal": "To walk to the end of the garden",
-    "What": "Increase walking. Cut out daily biscuits with morning and afternoon coffee. Change sugar to sweeteners in hot drinks",
-    "Who": "Myself",
-    "When": "Between now and Christmas",
-    "Suggested Strategies": "Slowly increase walkking distance each week",
-    "Status": "Completed",
-    "Confidence": "7/10",
-    "Outcome": "Fully achieved",
-    "Date last updated": "17/11/17",
-    "Review date": "6 months",
-    "Agreed with person or legitimate representative": "Yes",
-    "Date this plan was last updated": "17/11/17",
-    "Planned review date/interval": "In 6 months"
+  "CareAndSupportPlan": {
+    "NeedsConcernsOrProblems": "Would like to lose weight", {
+      "GoalsAndHopes": "To fit into size 16 dress by Christmas. Importance: 10/10", {
+        "ActionsAndActivities": {
+          "What": "Increase walking. Cut out daily biscuits with morning and afternoon coffee. Change sugar to sweeteners in hot drinks",
+          "Who": "Myself",
+          "When": "Between now and Christmas",
+          "Status": "Not Started",
+          "DateLastUpdated": "17.10.17",
+          "ReviewDate": "6 months"
+        },
+      },
+    },
+    "NeedsConcernsOrProblems": "Pain in knees",{
+      "GoalsAndHopes":"To walk to the park with my grandchildren. Importance: 10/10", {
+        "ActionsAndActivities":{
+          "What": "Gradually increase walking distance, see physiotherapist",
+          "Who": "Myself/ physiotherapist",
+          "When": "Over 6 months",
+          "Status": "Started",
+          "DateLastUpdated": "17.10.17",
+          "ReviewDate": "6 months"
+        },
+        "Outcomes": "On-going",
+        "ActionsAndActivities":{
+          "StageGoal": "To walk to the end of the garden",
+          "What": "To do home exercise programme as given by the physiotherapist. 10 repeats of each exercise x2 daily",
+          "Who": "Myself",
+          "When": "Unti end of May",
+          "SuggestedStrategies": "Slowly increase walking distance each week",
+          "Status": "Completed",
+          "Confidence": "7/10",
+          "Outcome": "Fully achieved",
+          "DateLastUpdated": "10.11.17"
+        },
+        "ActionsAndActivities":{
+          "StageGoal": "To walk to the end of the street",
+          "What": "Continue home exercise program. 15 repeats of each exercise x3 daily",
+          "Who": "Myself",
+          "When": "Until end of May",
+          "DateLastUpdated": "24.11.17"
+        },
+        "ActionsAndActivities":{
+          "What": "Physio review",
+          "Who": "Physiotherapist",
+          "When": "At end of May",
+          "Status": "Not Started",
+          "DateLastUpdated": "10.11.17",
+          "ReviewDate": "6 months"
+        },
+        "AgreedWithPersonOrLegitimateRepresentative": "Yes",
+        "DateThisPlanWasLastUpdated":"10.11.17",
+        "PlannedReviewDate/interval": "In 6 months",
+        "ResponsibilityForReview":{
+          "Name": "Dr Joe Collins",
+          "Role": "GP",
+          "Contact": "020 345 6789, joe.Collins9@nhs.net",
+          "Organisation": "Surgery"
+        },
+      },
+    },
   },
-  "Responsbility for review": {
-    "Name": "Dr Joe Collins",
-    "Role": "GP",
-    "ContactPhone": "0203456789",
-    "ContactEmail": "joe.Collins9@nhs.net",
-    "Organisation": "Surgery"
+  "ContingencyPlans": {
+    "PersonCompletingRecord": {
+      "Name": "Dr Joe Collins",
+      "Role": "GP",
+      "Organisation": "Surgery",
+      "ContactDetails": "020 345 6789, joe.Collins9@nhs.net"
   },
-  "PerformingProfessional": {
-    "Name": "Tom Robbins",
-    "Role": "Physiotherapist",
-    "Org": "NHS Trust",
-    "ContactPhone": "0203456789",
-    "ContactEmail": "t.robbins@nhs.net"
+  "ContigencyPlanName": "COPD contigency plan",
+  "DateThisPlanWasLastUpdated": "17.10.17",
+  "PlannedReviewDate/interval": "19.04.17",
+  "ResponsibilityForReview":{
+     "Name": "Dr Joe Collins",
+     "Role": "GP",
+     "ContactDetails": "020 345 6789, joe.Collins9@nhs.net",
+     "Organisation": "Surgery"
+   },
+  "TriggerFactors": "Chest infection/exacerbation COPD",
+  "WhatShouldHappen": "Follow advice on COPD action plan. Start rescue pack if indicated",
+  "WhoShouldBeContacted": "Urgent Care Team 01915555555, or Glenpark Surgery on 019122222222"
   },
-  "Person Completing Record": {
-    "Name": "Dr Joe Collins",
-    "Role": "GP",
-    "Organisation": "Surgery",
-    "ContactPhone": "0203456789",
-    "ContactEmail": "joe.Collins9@nhs.net"
-  },
-  "Contigency Plan": {
-    "Name": "COPD contigency plan",
-    "Date this plan was last updated": "17/10/17",
-    "Planned review date/interval": "19/04/17",
-    "Trigger Factors": "Chest infection/exarcerbation COPD",
-    "What should happen": "Follow advice on COPD action plan. Start rescue pack if indicated",
-    "Who should be contacted": "Urgent Care Team 01915555555, or Glenpark Surgery on 019122222222"
-  },
-}
+},
