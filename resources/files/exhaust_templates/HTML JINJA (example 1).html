@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>PRSB Use Case Example 1</h1>
+</div>
+
+<div class="container">
+  <table class="table table-striped table-bordered">
+	 <thead>
+    	<tr>
+      	<th colspan="2">Patient demographics</th>
+      	<th colspan="2">GP Practice details</th>
+     		<th colspan="3">Relevant Contacts</th>
+   		</tr>
+   		<tr>
+      		<td>Patient name</td>
+      		<td>"{{ PersonDemographics.PersonName.PersonFullName }}"</td>
+      		<td>GP Practice identifier</td>
+          <td>"{{ GpPractice.GPpracticeRecordEntry.GPpracticeIdentifier }}"</td>
+          <td>Name</td>
+     	  	<td>Relationship/role</td>
+          <td>Contact details</td>
+        </tr>
+        <tr>
+         	  <td>DOB</td>
+            <td>"{{ PersonDemographics.PersonName.DateOfBirth }}"</td>
+            <td>GP Name</td>
+            <td>"{{ GpPractice.GpPracticeRecordEntry.GpName }}"</td>
+            <td>Tom Smith</td>
+            <td>Care-coordinator</td>
+            <td>tom.smith@nhs.net</td>
+        </tr>
+        <tr>
+         	  <td>Gender</td>
+            <td>"{{ PersonDemographics.PersonName.Gender }}"</td>
+            <td>GP details</td>
+            <td>"{{ GpPractice.GpPracticeRecordEntry.GpPracticeDetails }}"</td>
+            <td>Richard Doe</td>
+            <td>Husband</td>
+            <td>077899888</td>
+         </tr>
+         <tr>
+         	  <td>NHS Number</td>
+            <td>"{{ PersonDemograhics.PersonName.NHSnumber }}"</td>
+            <td></td>
+            <td></td>
+            <td>Lisa Lowe</td>
+            <td>Daughter</td>
+            <td>079999999</td>
+         </tr>
+         <tr>
+         	  <td>Patient address</td>
+            <td>"{{ PersonDemographics.PersonAddress.AddressLine1 }}"</td>
+            <td></td>
+            <td></td>
+            <td>Tom Robbins</td>
+            <td>Physiotherapist</td>
+            <td>t.robbins@nhs.net</td>
+         </tr>
+         <tr>
+            <td>Patient email address</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Dr Jane Collins</td>
+            <td>COPD specialist</td>
+            <td>jane.Collins2@nhs.net</td>
+         </tr>
+         <tr>
+            <td>Patient telephone number</td>
+            <td>"{{ PersonDemographics.PersonContactDetails.PersonTelephoneNumber }}"</td>
+            <td></td>
+            <td></td>
+            <td>Janet Moss</td>
+            <td>Pharmacist</td>
+            <td>j.moss@nhs.net</td>
+         </tr>
+         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Sandra Laing</td>
+            <td>Occupational Therapist</td>
+            <td>s.laing@nhs.net</td>
+          </tr>
+        </thead>
+
+<div class="container">
+ <table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>About me</th>
+      <th>Supported to write this by</th>
+      <th>Date</th>
+    </tr>
+    <tr>
+      <td><p>"{{ AboutMe.AboutMe }}"<p></td>
+      <td><p>"{{ AboutMe.AboutMe.SupportedToWriteThisBy }}"<p></td>
+      <td>"{{ AboutMe.AboutMe.Date }}"</td>
+    </tr>
+  </thead>
+
+<div class="container">
+ <table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+     <th colspan="2">Social Context</th>
+   </tr>
+    <tr>
+     <td>Services and care</td>
+     <td><p>Main Hospital NHS, 30 High Rd, AG1 85D<br>Community Health NHS, 56 High Rd, AG1 3JL<br>Specialist service NH, 72 Round Lane, AG2 3YA<p></td>
+    </tr>
+  </thead>
+
+
+
+
+<div class="container">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th colspan="7"><strong>Care and support plan<strong></th>
+      </tr>
+      <tr>
+       <th colspan="1">Needs Concerns or health problems</th>
+       <th colspan="1">Goals</th>
+       <th colspan="1">Stage goal</th>
+       <th colspan="2">Actions</th>
+       <th colspan="1">Outcomes</th>
+       <th colspan="1">Person completing record</th>
+     </tr>
+     <tr>
+      <td><p>"{{ CareAndSupportPlan.NeedsConcernsOrProblems }}"<p></td>
+      <td><p>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes }}"</td>
+      <td></td>
+      <td><p>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.What }}"<p></td>
+      <td><p><b>Who:</b>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.Who }}"<br><b>When:</b>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.When }}"<br><b>Status:</b>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.Status }}"<br><b>Date:</b>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.DateLastUpdated }}"<br><b>Planned review date:</b>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.ReviewDate }}"<p></td>
+      <td></td>
+      <td><p><b>Name:</b>Dr Joe Collins<br><b>Role:</b>GP<br><b>Contact:</b>0203546789, joe.Collins9@nhs.net<br><b>Organisation:</b>Surgery<p></td>
+    </tr>
+    <tr>
+      <td><p>"{{ CareAndSupportPlan.NeedsConcernsOrProblems }}"<p></td>
+      <td><p>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes }}"<p></td>
+      <td></td>
+      <td><p>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.What }}"<p></td>
+      <td><p><b>Who:</b>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.Who }}"<br><b>When:</b> "{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.When }}"<br><b>Status:</b> {{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.Status }}"<br><b>Date:</b>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.DateLastUpdated }}"<br><b>Planned review date:</b>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.ReviewDate }}"<p></td>
+      <td><p>""{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.Outcomes }}"<p></td>
+      <td><p><b>Name:</b>Tom Robbins<br><b>Role:</b>Physiotherapist<br><b>Contact:</b> 020 345 6789, t.robbins@nhs.net<br><b>Organisation:</b>NHS Trust<p></td>
+     </tr>
+     <tr>
+       <td></td>
+       <td></td>
+       <td><p>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.StageGoal }}"<br><b>Outcome:</b> Fully achieved</p></td>
+       <td><p>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.What }}"<p></td>
+       <td><p><b>Who:</b> "{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.Who }}"<br><b>When:</b> "{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.When }}"<br><b>Suggested strategies:</b> "{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.SuggestedStrategies }}"<br><b>Status:</b> "{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.Completed }}"<br><b>Confidence:</b>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.Confidence }}"<br><b>Date:</b> "{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.DateLastUpdated }}"</p></td>
+       <td></td>
+       <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><p>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.StageGoal }}"</p></td>
+        <td><p>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.What }}"<p></td>
+        <td><p><b>Who:</b> "{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.Who }}"<br><b>When:</b> "{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.When }}"y<br><b>Date:</b> "{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.DateLastUpdated }}"</p></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><p>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.What }}"<p></td>
+        <td><p><b>Who:</b> "{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.Who }}"<br><b>When:</b> "{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.When }}"<br><b>Status:</b> "{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.Status }}"<br><b>Date:</b> "{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.DateLastUpdated }}"<br><b>Planned review date:</b>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ActionsAndActivites.ReviewDate }}"<p></td>
+        <td></td>
+        <td><p><b>Name:</b>Tom Robbins<br><b>Role:</b>Physiotherapist<br><b>Contact:</b> 020 345 6789, t.robbins@nhs.net<br><b>Organisation:</b>NHS Trust<p></td>
+      </tr>
+    </thead>
+
+
+  <div class="container">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th col><b>Planned review date/interval<b></th>
+          <th col><b>Responsibility for review<b></th>
+          <th col><b>Agreed with person<b></th>
+          <th col><b>Date this plan was last updated<b></th>
+          <th col><b>Last Updated by<b></th>
+        </tr>
+        <tr>
+          <td><p>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.PlannedReviewDate/Interval }}"<p></td>
+          <td><p><b>Name:</b>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ResponsibiltyForReview.Name }}"<br><b>Role:</b> "{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ResponsibiltyForReview.Role }}"<br><b>Contact:</b> "{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ResponsibiltyForReview.Contact }}"<br><b>Organisation:</b> "{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.ResponsibiltyForReview.Organisation }}"</p></td>
+          <td><p>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.AgreedWithPersonOrLegitimateRepresentative }}"</p></td>
+          <td><p>"{{ CareAndSupportPlan.NeedsConcernsOrProblems.GoalsAndHopes.DateThisPlanWasLastUpdated }}"<p></td>
+          <td><p><b>Name:</b> Tom Robbins<br><b>Role:</b> Physiotherapist<br><b>Contact:</b> 020 345 6789, t.robbins@nhs.net<br><b>Organisation:</b> NHS Trust<p></td>
+        </tr>
+      </thead>
+
+    <div class="container">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th col><b>Other care planning documents<b></th>
+            <th col><b>Date<b></th>
+          </tr>
+          <tr>
+            <td><p>COPD action plan<p></td>
+            <td><p>17.10.17<p></td>
+          </tr>
+        </thead>
+
+
+      <div class="container">
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+             <th colspan="10"><b>Contingency plan<b></th>
+            </tr>
+            <tr>
+             <td col><b>Plan name<b></td>
+             <td col><b>Trigger factors<b></td>
+             <td col><b>What should happen<b></td>
+             <td col><b>Who should be contacted<b></td>
+             <td col><b>Anticipatory medicines/equipment<b></td>
+             <td col><b>Agreed with person<b></td>
+             <td col><b>Person completing record<b></td>
+             <td col><b>Date this plan was last updated<b></td>
+             <td col><b>Planned review date<b></td>
+             <td col><b>Responsibility for review<b></td>
+            </tr>
+            <tr>
+              <td><p>"{{ ContigencyPlans.ContigencyPlanName }}"<p></td>
+              <td><p>"{{ ContigencyPlans.TriggerFactors }}"<p></td>
+              <td><p>"{{ ContigencyPlans.WhatShouldHappen }}"<p></td>
+              <td><p>"{{ ContigencyPlans.WhoShouldBeContacted }}"<p></td>
+              <td><p>"{{ ContigencyPlans.AnticipatoryMedicines/equipment }}"<p></td>
+              <td><p>"{{ ContigencyPlans.AgreedWithPersonOrLegitimateRepresentative }}"<p></td>
+              <td><p><b>Name:</b> "{{ ContigencyPlans.Name }}"<br><b>Role:</b> "{{ ContigencyPlans.Role }}"<br><b>Contact:</b> "{{ ContigencyPlans.ContactDetails }}"<br><b>Organisation:</b> "{{ ContigencyPlans.Organisation }}"</p></td>
+              <td><p>"{{ ContigencyPlans.DateThisPlanWasLastUpdated }}"<p></td>
+              <td><p><b>Name:</b>"{{ ContigencyPlans.ResponsibilityForReview.Name }}"<br><b>Role:</b>"{{ ContigencyPlans.ResponsibilityForReview.Role }}"<br><b>Contact:</b> "{{ ContigencyPlans.ResponsibilityForReview.ContactDetails }}"<br><b>Organisation:</b> "{{ ContigencyPlans.ResponsibilityForReview.Organisation }}"</p></td>
+            </tr>
+          </thead>
+        </body>
+      </html>
